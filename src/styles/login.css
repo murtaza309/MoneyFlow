@@ -1,0 +1,1393 @@
+/* =========================================================
+   MONEYFLOW — LOGIN PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.moneyflow-login-page {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: grid;
+  grid-template-columns:
+    minmax(430px, 0.95fr)
+    minmax(500px, 1.05fr);
+
+  background: #f4f7fb;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   LEFT SHOWCASE PANEL
+   ========================================================= */
+
+.moneyflow-login-showcase {
+  position: relative;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 38px 46px 34px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0a1d36 0%,
+      #0f2747 48%,
+      #12385f 100%
+    );
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   DECORATIVE ORBS
+   ========================================================= */
+
+.moneyflow-login-orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(3px);
+}
+
+.moneyflow-login-orb.orb-one {
+  width: 360px;
+  height: 360px;
+
+  top: -150px;
+  right: -130px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 201, 134, 0.24),
+      rgba(37, 201, 134, 0)
+    );
+}
+
+.moneyflow-login-orb.orb-two {
+  width: 450px;
+  height: 450px;
+
+  bottom: -240px;
+  left: -210px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(71, 145, 255, 0.18),
+      rgba(71, 145, 255, 0)
+    );
+}
+
+
+/* =========================================================
+   GRID PATTERN
+   ========================================================= */
+
+.moneyflow-login-grid-pattern {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.035;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.9) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.9) 1px,
+      transparent 1px
+    );
+
+  background-size: 44px 44px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.moneyflow-login-showcase-brand,
+.moneyflow-login-mobile-brand {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.moneyflow-login-brand-mark {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #25c986,
+      #179f69
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 13px;
+
+  box-shadow:
+    0 10px 25px rgba(37, 201, 134, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.moneyflow-login-showcase-brand strong,
+.moneyflow-login-mobile-brand strong {
+  display: block;
+
+  margin-bottom: 2px;
+
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.moneyflow-login-showcase-brand span,
+.moneyflow-login-mobile-brand span {
+  display: block;
+
+  font-size: 9.5px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+
+/* LEFT BRAND COLOURS */
+
+.moneyflow-login-showcase-brand strong {
+  color: #ffffff;
+}
+
+.moneyflow-login-showcase-brand span {
+  color: rgba(224, 235, 248, 0.68);
+}
+
+
+/* =========================================================
+   SHOWCASE CONTENT
+   ========================================================= */
+
+.moneyflow-login-showcase-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 650px;
+
+  margin: auto 0;
+  padding: 48px 0 30px;
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.moneyflow-login-badge {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 20px;
+  padding: 8px 11px;
+
+  color: #8df0c5;
+
+  background: rgba(37, 201, 134, 0.1);
+
+  border: 1px solid rgba(37, 201, 134, 0.19);
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.15px;
+}
+
+
+/* =========================================================
+   SHOWCASE TITLE
+   ========================================================= */
+
+.moneyflow-login-showcase-content h1 {
+  max-width: 640px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(38px, 4.5vw, 64px);
+  font-weight: 790;
+  line-height: 1.04;
+  letter-spacing: -2.6px;
+}
+
+.moneyflow-login-showcase-content h1 span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #65dda9;
+}
+
+
+/* =========================================================
+   SHOWCASE DESCRIPTION
+   ========================================================= */
+
+.moneyflow-login-showcase-content > p {
+  max-width: 570px;
+
+  margin: 22px 0 0;
+
+  color: rgba(224, 235, 248, 0.72);
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   FEATURE LIST
+   ========================================================= */
+
+.moneyflow-login-feature-list {
+  display: grid;
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+.moneyflow-login-feature-list > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: rgba(239, 247, 255, 0.84);
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.moneyflow-login-feature-list svg {
+  flex-shrink: 0;
+
+  color: #5ed8a4;
+}
+
+
+/* =========================================================
+   PREVIEW CARD
+   ========================================================= */
+
+.moneyflow-login-preview-card {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 560px;
+
+  margin-top: 8px;
+  padding: 17px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.105),
+      rgba(255, 255, 255, 0.055)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 18px;
+
+  box-shadow:
+    0 20px 50px rgba(2, 11, 24, 0.18);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+
+/* =========================================================
+   PREVIEW TOP
+   ========================================================= */
+
+.moneyflow-login-preview-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 15px;
+}
+
+.moneyflow-login-preview-top span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: rgba(224, 235, 248, 0.6);
+
+  font-size: 8.5px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.moneyflow-login-preview-top strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.moneyflow-login-preview-icon {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #5ed8a4;
+
+  background: rgba(37, 201, 134, 0.11);
+
+  border: 1px solid rgba(37, 201, 134, 0.15);
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   PREVIEW STATS
+   ========================================================= */
+
+.moneyflow-login-preview-stats {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.moneyflow-login-preview-stats > div {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 11px;
+
+  background: rgba(255, 255, 255, 0.055);
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+}
+
+.moneyflow-login-stat-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+}
+
+.moneyflow-login-stat-icon.income {
+  color: #74e5b6;
+
+  background: rgba(37, 201, 134, 0.12);
+}
+
+.moneyflow-login-stat-icon.expense {
+  color: #ff9999;
+
+  background: rgba(239, 95, 95, 0.11);
+}
+
+.moneyflow-login-preview-stats small {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: rgba(224, 235, 248, 0.55);
+
+  font-size: 8.5px;
+}
+
+.moneyflow-login-preview-stats strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 740;
+}
+
+
+/* =========================================================
+   PREVIEW BALANCE
+   ========================================================= */
+
+.moneyflow-login-preview-balance {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  margin-top: 10px;
+  padding: 12px 13px;
+
+  background: rgba(37, 201, 134, 0.075);
+
+  border: 1px solid rgba(37, 201, 134, 0.11);
+  border-radius: 12px;
+}
+
+.moneyflow-login-preview-balance span {
+  color: rgba(224, 235, 248, 0.68);
+
+  font-size: 9.5px;
+  font-weight: 600;
+}
+
+.moneyflow-login-preview-balance strong {
+  color: #74e5b6;
+
+  font-size: 14px;
+  font-weight: 760;
+}
+
+
+/* =========================================================
+   LEFT FOOTER
+   ========================================================= */
+
+.moneyflow-login-showcase-footer {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 24px;
+
+  color: rgba(224, 235, 248, 0.5);
+
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
+
+.moneyflow-login-main {
+  min-width: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(37, 201, 134, 0.065),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 15% 85%,
+      rgba(15, 39, 71, 0.04),
+      transparent 25%
+    ),
+    #f4f7fb;
+}
+
+
+/* =========================================================
+   MOBILE BRAND
+   ========================================================= */
+
+.moneyflow-login-mobile-brand {
+  display: none;
+
+  width: 100%;
+  max-width: 470px;
+
+  margin-bottom: 18px;
+}
+
+.moneyflow-login-mobile-brand strong {
+  color: #172033;
+}
+
+.moneyflow-login-mobile-brand span {
+  color: #748094;
+}
+
+
+/* =========================================================
+   LOGIN CARD
+   ========================================================= */
+
+.moneyflow-login-card {
+  width: 100%;
+  max-width: 470px;
+
+  padding: 34px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid rgba(215, 222, 231, 0.9);
+  border-radius: 22px;
+
+  box-shadow:
+    0 26px 65px rgba(15, 39, 71, 0.1),
+    0 5px 18px rgba(15, 39, 71, 0.035);
+}
+
+
+/* =========================================================
+   LOGIN HEADING
+   ========================================================= */
+
+.moneyflow-login-heading {
+  margin-bottom: 26px;
+
+  text-align: center;
+}
+
+.moneyflow-login-heading-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 15px;
+
+  color: #149e67;
+
+  background: rgba(37, 201, 134, 0.1);
+
+  border: 1px solid rgba(37, 201, 134, 0.14);
+  border-radius: 14px;
+}
+
+.moneyflow-login-heading h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 27px;
+  font-weight: 780;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+}
+
+.moneyflow-login-heading p {
+  max-width: 370px;
+
+  margin: 9px auto 0;
+
+  color: #748094;
+
+  font-size: 11.5px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.moneyflow-login-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin-bottom: 17px;
+  padding: 11px 12px;
+
+  color: #b33e3e;
+
+  background: rgba(239, 95, 95, 0.075);
+
+  border: 1px solid rgba(239, 95, 95, 0.15);
+  border-radius: 11px;
+}
+
+.moneyflow-login-error-icon {
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  background: #e95e5e;
+
+  border-radius: 50%;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.moneyflow-login-error p {
+  margin: 1px 0 0;
+
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.moneyflow-login-form {
+  display: grid;
+  gap: 17px;
+}
+
+
+/* =========================================================
+   FIELDS
+   ========================================================= */
+
+.moneyflow-login-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #273247;
+
+  font-size: 10.5px;
+  font-weight: 680;
+  line-height: 1.3;
+}
+
+.moneyflow-login-input-wrap {
+  position: relative;
+
+  width: 100%;
+}
+
+.moneyflow-login-input-wrap > svg {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+
+  color: #99a3b2;
+
+  pointer-events: none;
+
+  transform: translateY(-50%);
+}
+
+.moneyflow-login-input-wrap input {
+  width: 100%;
+  min-height: 50px;
+
+  padding: 0 46px 0 44px;
+
+  color: #172033;
+
+  background: #ffffff;
+
+  border: 1px solid #dce2e9;
+  border-radius: 12px;
+  outline: none;
+
+  font: inherit;
+  font-size: 12px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.moneyflow-login-input-wrap input::placeholder {
+  color: #a7afbc;
+}
+
+.moneyflow-login-input-wrap input:hover:not(:disabled) {
+  border-color: #cbd3dd;
+}
+
+.moneyflow-login-input-wrap input:focus {
+  border-color: rgba(37, 201, 134, 0.8);
+
+  box-shadow:
+    0 0 0 4px rgba(37, 201, 134, 0.09);
+}
+
+.moneyflow-login-input-wrap input:disabled {
+  color: #7b8491;
+
+  background: #f6f8fa;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   PASSWORD TOGGLE
+   ========================================================= */
+
+.moneyflow-login-password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  color: #8993a3;
+
+  background: transparent;
+
+  border: 0;
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transform: translateY(-50%);
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.moneyflow-login-password-toggle:hover:not(:disabled) {
+  color: #0f2747;
+
+  background: #f2f5f8;
+}
+
+.moneyflow-login-password-toggle:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+.moneyflow-login-submit {
+  width: 100%;
+  min-height: 51px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  margin-top: 3px;
+  padding: 0 18px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #25c986,
+      #18a66c
+    );
+
+  border: 0;
+  border-radius: 12px;
+
+  box-shadow:
+    0 10px 24px rgba(37, 201, 134, 0.23),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 730;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.moneyflow-login-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(37, 201, 134, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.moneyflow-login-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.moneyflow-login-submit:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.68;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   SPINNER
+   ========================================================= */
+
+.moneyflow-login-spinner {
+  animation:
+    moneyflow-login-spin
+    0.8s
+    linear
+    infinite;
+}
+
+@keyframes moneyflow-login-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   SECURITY NOTE
+   ========================================================= */
+
+.moneyflow-login-security-note {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 7px;
+
+  margin-top: 22px;
+  padding-top: 18px;
+
+  color: #8a94a4;
+
+  border-top: 1px solid #edf0f4;
+
+  font-size: 9.5px;
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+.moneyflow-login-security-note svg {
+  flex-shrink: 0;
+
+  margin-top: 1px;
+
+  color: #24b87b;
+}
+
+
+/* =========================================================
+   COPYRIGHT
+   ========================================================= */
+
+.moneyflow-login-copyright {
+  max-width: 470px;
+
+  margin: 18px auto 0;
+
+  color: #98a1ae;
+
+  font-size: 9px;
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   MEDIUM DESKTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+  .moneyflow-login-page {
+    grid-template-columns:
+      minmax(390px, 0.9fr)
+      minmax(480px, 1.1fr);
+  }
+
+  .moneyflow-login-showcase {
+    padding:
+      32px
+      34px
+      30px;
+  }
+
+  .moneyflow-login-showcase-content h1 {
+    font-size:
+      clamp(
+        36px,
+        4vw,
+        52px
+      );
+  }
+
+  .moneyflow-login-main {
+    padding: 30px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .moneyflow-login-page {
+    display: block;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .moneyflow-login-showcase {
+    display: none;
+  }
+
+  .moneyflow-login-main {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    padding:
+      35px
+      20px;
+  }
+
+  .moneyflow-login-mobile-brand {
+    display: flex;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .moneyflow-login-main {
+    justify-content: flex-start;
+
+    padding:
+      calc(
+        22px +
+        env(safe-area-inset-top)
+      )
+      14px
+      calc(
+        24px +
+        env(safe-area-inset-bottom)
+      );
+  }
+
+  .moneyflow-login-mobile-brand {
+    margin-bottom: 17px;
+  }
+
+  .moneyflow-login-brand-mark {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+  }
+
+  .moneyflow-login-mobile-brand strong {
+    font-size: 16px;
+  }
+
+  .moneyflow-login-mobile-brand span {
+    font-size: 9px;
+  }
+
+  .moneyflow-login-card {
+    padding: 23px 17px;
+
+    border-radius: 18px;
+  }
+
+  .moneyflow-login-heading {
+    margin-bottom: 22px;
+  }
+
+  .moneyflow-login-heading-icon {
+    width: 46px;
+    height: 46px;
+
+    margin-bottom: 13px;
+
+    border-radius: 13px;
+  }
+
+  .moneyflow-login-heading h2 {
+    font-size: 24px;
+  }
+
+  .moneyflow-login-heading p {
+    font-size: 10.5px;
+  }
+
+  .moneyflow-login-form {
+    gap: 15px;
+  }
+
+  .moneyflow-login-field label {
+    font-size: 10px;
+  }
+
+  .moneyflow-login-input-wrap input {
+    min-height: 48px;
+
+    font-size: 11.5px;
+  }
+
+  .moneyflow-login-submit {
+    min-height: 49px;
+
+    font-size: 11px;
+  }
+
+  .moneyflow-login-security-note {
+    font-size: 9px;
+  }
+
+  .moneyflow-login-copyright {
+    margin-top: 15px;
+
+    font-size: 8.5px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .moneyflow-login-main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .moneyflow-login-card {
+    padding:
+      20px
+      14px;
+  }
+
+  .moneyflow-login-heading h2 {
+    font-size: 22px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.moneyflow-login-submit:focus-visible,
+.moneyflow-login-password-toggle:focus-visible,
+.moneyflow-login-input-wrap input:focus-visible {
+  outline: 3px solid rgba(37, 201, 134, 0.35);
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+
+  .moneyflow-login-submit,
+  .moneyflow-login-password-toggle,
+  .moneyflow-login-input-wrap input {
+    transition: none;
+  }
+
+  .moneyflow-login-spinner {
+    animation-duration: 1.4s;
+  }
+}
+
+/* =========================================================
+   SIGN UP LINK
+   ========================================================= */
+
+.moneyflow-login-signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  margin-top: 19px;
+
+  color: #7b8798;
+
+  font-size: 10.5px;
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+.moneyflow-login-signup button {
+  padding: 0;
+
+  color: #169e69;
+
+  background: transparent;
+
+  border: 0;
+
+  font: inherit;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.moneyflow-login-signup button:hover:not(:disabled) {
+  color: #0f7f53;
+
+  text-decoration: underline;
+}
+
+.moneyflow-login-signup button:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .moneyflow-login-signup {
+    margin-top: 17px;
+
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   REGISTER PAGE — BACK BUTTON
+   ========================================================= */
+
+.moneyflow-register-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  margin: 0 0 17px;
+  padding: 0;
+
+  color: #738095;
+
+  background: transparent;
+
+  border: 0;
+
+  font: inherit;
+  font-size: 10px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.moneyflow-register-back:hover:not(:disabled) {
+  color: #0f2747;
+
+  transform: translateX(-2px);
+}
+
+.moneyflow-register-back:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   PASSWORD REQUIREMENTS
+   ========================================================= */
+
+.moneyflow-password-requirements {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 7px 10px;
+
+  margin-top: -7px;
+  padding: 11px 12px;
+
+  background: #f8fafc;
+
+  border: 1px solid #edf0f4;
+  border-radius: 10px;
+}
+
+.moneyflow-password-requirements span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #9aa3b1;
+
+  font-size: 8.5px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  transition:
+    color 0.2s ease;
+}
+
+.moneyflow-password-requirements span svg {
+  flex-shrink: 0;
+
+  color: #c4cad2;
+}
+
+.moneyflow-password-requirements span.valid {
+  color: #178c60;
+}
+
+.moneyflow-password-requirements span.valid svg {
+  color: #25c986;
+}
+
+
+/* =========================================================
+   PASSWORD MATCH
+   ========================================================= */
+
+.moneyflow-password-match {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  margin-top: 7px;
+
+  font-size: 8.5px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.moneyflow-password-match.valid {
+  color: #178c60;
+}
+
+.moneyflow-password-match.invalid {
+  color: #c84c4c;
+}
+
+
+/* =========================================================
+   REGISTER MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .moneyflow-password-requirements {
+    grid-template-columns: 1fr;
+
+    gap: 6px;
+
+    padding: 10px;
+  }
+
+  .moneyflow-register-back {
+    margin-bottom: 14px;
+  }
+}
