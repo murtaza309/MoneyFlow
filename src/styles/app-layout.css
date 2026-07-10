@@ -650,3 +650,449 @@
   outline: 3px solid rgba(37, 201, 134, 0.42);
   outline-offset: 2px;
 }
+
+.sidebar-full-logo {
+  width: 100%;
+  max-width: 190px;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: left center;
+}
+/* =========================================================
+   MOBILE NAV — BALANCED FIVE-ITEM LAYOUT
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .mobile-bottom-nav {
+    grid-template-columns:
+      repeat(
+        5,
+        minmax(0, 1fr)
+      );
+
+    overflow: visible;
+  }
+
+
+  /* =======================================================
+     MORE WRAPPER
+     ======================================================= */
+
+  .mobile-more-wrapper {
+    position: relative;
+
+    min-width: 0;
+
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  /* =======================================================
+     MORE BUTTON
+     ======================================================= */
+
+  .mobile-more-button {
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: 0;
+
+    font: inherit;
+  }
+
+
+  /* =======================================================
+     BACKDROP
+     ======================================================= */
+
+  .mobile-more-backdrop {
+    position: fixed;
+    inset: 0;
+
+    z-index: 990;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+
+    background:
+      rgba(
+        8,
+        20,
+        38,
+        0.18
+      );
+
+    border: 0;
+
+    backdrop-filter:
+      blur(1.5px);
+
+    -webkit-backdrop-filter:
+      blur(1.5px);
+
+    cursor: default;
+  }
+
+
+  /* =======================================================
+     MORE MENU
+     ======================================================= */
+
+  .mobile-more-menu {
+    position: absolute;
+
+    right: 6px;
+
+    bottom:
+      calc(
+        100% +
+        14px
+      );
+
+    z-index: 1100;
+
+    width: 225px;
+
+    padding: 8px;
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.985
+      );
+
+    border:
+      1px solid
+      rgba(
+        214,
+        222,
+        231,
+        0.96
+      );
+
+    border-radius: 16px;
+
+    box-shadow:
+      0 20px 50px
+        rgba(
+          5,
+          19,
+          38,
+          0.22
+        ),
+      0 4px 15px
+        rgba(
+          5,
+          19,
+          38,
+          0.07
+        );
+
+    transform-origin:
+      bottom right;
+
+    animation:
+      mobile-more-menu-in
+      0.18s
+      ease-out;
+  }
+
+
+  @keyframes mobile-more-menu-in {
+
+    from {
+      opacity: 0;
+
+      transform:
+        translateY(8px)
+        scale(0.96);
+    }
+
+    to {
+      opacity: 1;
+
+      transform:
+        translateY(0)
+        scale(1);
+    }
+
+  }
+
+
+  /* =======================================================
+     SMALL POINTER
+     ======================================================= */
+
+  .mobile-more-menu::after {
+    content: "";
+
+    position: absolute;
+
+    right: 25px;
+    bottom: -6px;
+
+    width: 12px;
+    height: 12px;
+
+    background: #ffffff;
+
+    border-right:
+      1px solid
+      rgba(
+        214,
+        222,
+        231,
+        0.96
+      );
+
+    border-bottom:
+      1px solid
+      rgba(
+        214,
+        222,
+        231,
+        0.96
+      );
+
+    transform:
+      rotate(45deg);
+  }
+
+
+  /* =======================================================
+     MENU HEADER
+     ======================================================= */
+
+  .mobile-more-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding:
+      5px
+      7px
+      8px;
+
+    border-bottom:
+      1px solid
+      #edf0f4;
+  }
+
+
+  .mobile-more-menu-header > span {
+    color: #172033;
+
+    font-size: 10px;
+    font-weight: 750;
+  }
+
+
+  .mobile-more-menu-header button {
+    width: 26px;
+    height: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    color: #7f8998;
+
+    background: transparent;
+
+    border: 0;
+    border-radius: 7px;
+
+    cursor: pointer;
+  }
+
+
+  .mobile-more-menu-header button:hover {
+    color: #172033;
+
+    background: #f1f4f7;
+  }
+
+
+  /* =======================================================
+     MENU ITEMS
+     ======================================================= */
+
+  .mobile-more-menu-item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 5px;
+
+    padding:
+      9px
+      8px;
+
+    text-align: left;
+
+    background: transparent;
+
+    border: 0;
+    border-radius: 11px;
+
+    font: inherit;
+
+    cursor: pointer;
+
+    transition:
+      background-color 0.18s ease,
+      transform 0.18s ease;
+  }
+
+
+  .mobile-more-menu-item:hover {
+    background: #f5f8fb;
+
+    transform:
+      translateX(2px);
+  }
+
+
+  .mobile-more-menu-item.active {
+    background:
+      rgba(
+        37,
+        201,
+        134,
+        0.08
+      );
+  }
+
+
+  /* =======================================================
+     MENU ICONS
+     ======================================================= */
+
+  .mobile-more-menu-icon {
+    width: 36px;
+    height: 36px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+  }
+
+
+  .mobile-more-menu-icon.reports {
+    color: #3478d4;
+
+    background:
+      rgba(
+        52,
+        120,
+        212,
+        0.1
+      );
+  }
+
+
+  .mobile-more-menu-icon.settings {
+    color: #7557d6;
+
+    background:
+      rgba(
+        117,
+        87,
+        214,
+        0.1
+      );
+  }
+
+
+  /* =======================================================
+     MENU TEXT
+     ======================================================= */
+
+  .mobile-more-menu-text {
+    min-width: 0;
+
+    display: block;
+  }
+
+
+  .mobile-more-menu-text strong {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #172033;
+
+    font-size: 10px;
+    font-weight: 730;
+    line-height: 1.25;
+  }
+
+
+  .mobile-more-menu-text small {
+    display: block;
+
+    color: #8792a3;
+
+    font-size: 8px;
+    font-weight: 500;
+    line-height: 1.35;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .mobile-more-menu {
+    right: 3px;
+
+    width: 210px;
+  }
+
+
+  .mobile-more-menu::after {
+    right: 22px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .mobile-more-button > span {
+    font-size: 9px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+  }
+
+}

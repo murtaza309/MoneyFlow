@@ -1,3 +1,4 @@
+import logo from "../assets/logo.png";
 import {
   useState,
 } from "react";
@@ -393,31 +394,15 @@ function Register() {
 
         {/* BRAND */}
 
-        <div className="moneyflow-login-showcase-brand">
+<div className="moneyflow-login-showcase-brand">
 
-          <div className="moneyflow-login-brand-mark">
+  <img
+    src={logo}
+    alt="MoneyFlow"
+    className="moneyflow-full-brand-logo"
+  />
 
-            <Wallet
-              size={24}
-              strokeWidth={2.3}
-            />
-
-          </div>
-
-
-          <div>
-
-            <strong>
-              MoneyFlow
-            </strong>
-
-            <span>
-              Smart financial management
-            </span>
-
-          </div>
-
-        </div>
+</div>
 
 
         {/* HERO CONTENT */}
@@ -632,31 +617,15 @@ function Register() {
 
         {/* MOBILE BRAND */}
 
-        <div className="moneyflow-login-mobile-brand">
+ <div className="moneyflow-login-mobile-brand">
 
-          <div className="moneyflow-login-brand-mark">
+  <img
+    src={logo}
+    alt="MoneyFlow"
+    className="moneyflow-full-brand-logo"
+  />
 
-            <Wallet
-              size={22}
-              strokeWidth={2.3}
-            />
-
-          </div>
-
-
-          <div>
-
-            <strong>
-              MoneyFlow
-            </strong>
-
-            <span>
-              Smart financial management
-            </span>
-
-          </div>
-
-        </div>
+</div>
 
 
         {/* REGISTER CARD */}

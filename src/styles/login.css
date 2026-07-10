@@ -2646,3 +2646,47 @@
   }
 
 }
+/* =========================================================
+   FULL MONEYFLOW LOGO
+   ========================================================= */
+
+.moneyflow-full-brand-logo {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: left center;
+}
+
+
+/* =========================================================
+   MOBILE LOGO
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .moneyflow-login-mobile-brand {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .moneyflow-full-brand-logo {
+    max-width: 190px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .moneyflow-full-brand-logo {
+    max-width: 165px;
+  }
+
+}

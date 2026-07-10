@@ -1,3 +1,4 @@
+import logo from "../assets/logo.png";
 import "../styles/login.css";
 import {
   useState,
@@ -238,31 +239,15 @@ function Login() {
 
         {/* BRAND */}
 
-        <div className="moneyflow-login-showcase-brand">
+   <div className="moneyflow-login-showcase-brand">
 
-          <div className="moneyflow-login-brand-mark">
+  <img
+    src={logo}
+    alt="MoneyFlow"
+    className="moneyflow-full-brand-logo"
+  />
 
-            <Wallet
-              size={24}
-              strokeWidth={2.3}
-            />
-
-          </div>
-
-
-          <div>
-
-            <strong>
-              MoneyFlow
-            </strong>
-
-            <span>
-              Smart financial management
-            </span>
-
-          </div>
-
-        </div>
+</div>
 
 
         {/* HERO CONTENT */}
@@ -472,32 +457,15 @@ function Login() {
           ===================================================== */}
 
       <main className="moneyflow-login-main">
+<div className="moneyflow-login-mobile-brand">
 
-        <div className="moneyflow-login-mobile-brand">
+  <img
+    src={logo}
+    alt="MoneyFlow"
+    className="moneyflow-full-brand-logo"
+  />
 
-          <div className="moneyflow-login-brand-mark">
-
-            <Wallet
-              size={22}
-              strokeWidth={2.3}
-            />
-
-          </div>
-
-
-          <div>
-
-            <strong>
-              MoneyFlow
-            </strong>
-
-            <span>
-              Smart financial management
-            </span>
-
-          </div>
-
-        </div>
+</div>
 
 
         <div className="moneyflow-login-card">
