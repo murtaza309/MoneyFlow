@@ -25,8 +25,16 @@ import {
 } from "lucide-react";
 
 import {
+  updateProfile,
+} from "firebase/auth";
+
+import {
   useAuth,
 } from "../context/AuthContext";
+
+import {
+  saveSettingsSection,
+} from "../services/settingsService";
 
 import "../styles/login.css";
 
@@ -42,6 +50,11 @@ function Register() {
   /* =========================================================
      FORM STATE
      ========================================================= */
+
+  const [
+    fullName,
+    setFullName,
+  ] = useState("");
 
   const [
     email,
@@ -140,8 +153,36 @@ function Register() {
     setError("");
 
 
+    const cleanName =
+      fullName
+        .trim()
+        .replace(/\s+/g, " ");
+
+
     const cleanEmail =
       email.trim();
+
+
+    /* -------------------------------------------------------
+       VALIDATE NAME
+       ------------------------------------------------------- */
+
+    if (!cleanName) {
+      setError(
+        "Please enter your full name."
+      );
+
+      return;
+    }
+
+
+    if (cleanName.length < 2) {
+      setError(
+        "Please enter a valid full name."
+      );
+
+      return;
+    }
 
 
     /* -------------------------------------------------------
@@ -212,11 +253,44 @@ function Register() {
 
 
     try {
-      await register(
-        cleanEmail,
-        password
+
+      const userCredential =
+        await register(
+          cleanEmail,
+          password
+        );
+
+
+      /* -----------------------------------------------------
+         SAVE NAME TO FIREBASE AUTH PROFILE
+         ----------------------------------------------------- */
+
+      await updateProfile(
+        userCredential.user,
+        {
+          displayName:
+            cleanName,
+        }
       );
 
+
+      /* -----------------------------------------------------
+         SAVE NAME TO MONEYFLOW SETTINGS
+         ----------------------------------------------------- */
+
+      await saveSettingsSection(
+        userCredential.user.uid,
+        "profile",
+        {
+          displayName:
+            cleanName,
+        }
+      );
+
+
+      /* -----------------------------------------------------
+         GO TO DASHBOARD
+         ----------------------------------------------------- */
 
       navigate(
         "/dashboard",
@@ -226,6 +300,7 @@ function Register() {
       );
 
     } catch (err) {
+
       console.error(
         "Registration error:",
         err
@@ -288,14 +363,16 @@ function Register() {
       }
 
     } finally {
+
       setLoading(false);
+
     }
   };
 
 
   return (
 
-    <div className="moneyflow-login-page">
+    <div className="moneyflow-login-page moneyflow-register-page">
 
 
       {/* =====================================================
@@ -361,6 +438,7 @@ function Register() {
 
           <h1>
             One place for every
+
             <span>
               transaction and category.
             </span>
@@ -549,7 +627,7 @@ function Register() {
           RIGHT REGISTER SIDE
           ===================================================== */}
 
-      <main className="moneyflow-login-main">
+      <main className="moneyflow-login-main moneyflow-register-main">
 
 
         {/* MOBILE BRAND */}
@@ -583,7 +661,7 @@ function Register() {
 
         {/* REGISTER CARD */}
 
-        <div className="moneyflow-login-card">
+        <div className="moneyflow-login-card moneyflow-register-card">
 
 
           {/* BACK TO LOGIN */}
@@ -627,8 +705,8 @@ function Register() {
 
 
             <p>
-              Create a secure MoneyFlow account and start
-              organising your transactions and categories.
+              Create your secure MoneyFlow account and start
+              organising your finances.
             </p>
 
           </div>
@@ -660,9 +738,51 @@ function Register() {
           {/* FORM */}
 
           <form
-            className="moneyflow-login-form"
+            className="moneyflow-login-form moneyflow-register-form"
             onSubmit={handleSubmit}
           >
+
+
+            {/* FULL NAME */}
+
+            <div className="moneyflow-login-field">
+
+              <label htmlFor="register-name">
+                Full name
+              </label>
+
+
+              <div className="moneyflow-login-input-wrap">
+
+                <UserRound
+                  size={18}
+                  strokeWidth={2}
+                />
+
+
+                <input
+                  id="register-name"
+                  type="text"
+                  placeholder="Enter your full name"
+                  autoComplete="name"
+                  value={fullName}
+                  onChange={(event) => {
+
+                    setFullName(
+                      event.target.value
+                    );
+
+                    clearError();
+
+                  }}
+                  disabled={loading}
+                  required
+                  autoFocus
+                />
+
+              </div>
+
+            </div>
 
 
             {/* EMAIL */}
@@ -699,7 +819,6 @@ function Register() {
                   }}
                   disabled={loading}
                   required
-                  autoFocus
                 />
 
               </div>
@@ -801,12 +920,14 @@ function Register() {
                       : ""
                   }
                 >
+
                   <CheckCircle2
                     size={13}
                     strokeWidth={2.2}
                   />
 
-                  At least 8 characters
+                  8+ characters
+
                 </span>
 
 
@@ -817,12 +938,14 @@ function Register() {
                       : ""
                   }
                 >
+
                   <CheckCircle2
                     size={13}
                     strokeWidth={2.2}
                   />
 
-                  Uppercase letter
+                  Uppercase
+
                 </span>
 
 
@@ -833,12 +956,14 @@ function Register() {
                       : ""
                   }
                 >
+
                   <CheckCircle2
                     size={13}
                     strokeWidth={2.2}
                   />
 
-                  Lowercase letter
+                  Lowercase
+
                 </span>
 
 
@@ -849,12 +974,14 @@ function Register() {
                       : ""
                   }
                 >
+
                   <CheckCircle2
                     size={13}
                     strokeWidth={2.2}
                   />
 
                   Number
+
                 </span>
 
               </div>
@@ -1045,8 +1172,7 @@ function Register() {
 
 
             <span>
-              Your account credentials are protected with secure
-              Firebase authentication.
+              Secure account authentication powered by Firebase.
             </span>
 
           </div>
